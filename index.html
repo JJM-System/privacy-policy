@@ -19,42 +19,48 @@
 
         /* ── HEADER ── */
         header {
+            position: relative;
             width: 100%;
-            min-height: 210px;
-            background-image: url('bgt_main.jpg');
-            background-size: cover;
-            background-position: center 35%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            line-height: 0;
+        }
+
+        header .header-img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .header-inner {
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 32px 24px;
+            gap: 14px;
         }
 
         .header-inner img.icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
             flex-shrink: 0;
         }
 
         .header-text img.logo {
             display: block;
-            max-width: 220px;
-            width: 100%;
+            max-width: 210px;
+            width: 18vw;
+            min-width: 120px;
             margin-bottom: 4px;
         }
 
         .header-text p {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: #933542;
             font-weight: 500;
+            white-space: nowrap;
         }
 
         /* ── CONTENT ── */
@@ -152,10 +158,9 @@
         }
 
         @media (max-width: 480px) {
-            header { min-height: 160px; background-position: 30% 35%; }
-            .header-inner { gap: 12px; padding: 24px 16px; }
-            .header-inner img.icon { width: 56px; height: 56px; border-radius: 14px; }
-            .header-text img.logo { max-width: 170px; }
+            .header-inner { gap: 8px; }
+            .header-inner img.icon { width: 44px; height: 44px; border-radius: 11px; }
+            .header-text p { font-size: 0.68rem; }
             .card { padding: 18px 16px; }
         }
     </style>
@@ -163,6 +168,7 @@
 <body>
 
 <header>
+    <img class="header-img" src="bgt_main.jpg" alt="" />
     <div class="header-inner">
         <img class="icon" src="ic_launcher.png" alt="App icon" />
         <div class="header-text">
