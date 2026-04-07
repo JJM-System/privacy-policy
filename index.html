@@ -5,69 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy – Pregnancy Test</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.6; }
-        h1 { color: #c2185b; }
-        h2 { color: #555; margin-top: 30px; }
-        p { margin: 10px 0; }
-        a { color: #c2185b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #FFF0F5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #EB667A 0%, #c2185b 100%);
+            color: #fff;
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+
+        header .icon {
+            font-size: 52px;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px 30px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 12px rgba(194,24,91,0.07);
+            border-left: 4px solid #EB667A;
+        }
+
+        .card h2 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #c2185b;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h2 .num {
+            background: #FFE7EE;
+            color: #EB667A;
+            font-size: 0.8rem;
+            font-weight: 700;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .card p:last-child { margin-bottom: 0; }
+
+        .card ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .card ul li {
+            font-size: 0.95rem;
+            color: #444;
+            padding: 6px 0 6px 20px;
+            position: relative;
+            border-bottom: 1px solid #FFF0F5;
+        }
+
+        .card ul li:last-child { border-bottom: none; }
+
+        .card ul li::before {
+            content: "♥";
+            color: #EB667A;
+            position: absolute;
+            left: 0;
+            font-size: 0.75rem;
+            top: 9px;
+        }
+
+        .card ul li strong { color: #c2185b; }
+
+        .disclaimer {
+            background: linear-gradient(135deg, #FFE7EE, #fff0f5);
+            border-left: 4px solid #F18592;
+        }
+
+        .disclaimer h2 { color: #EB667A; }
+
+        a {
+            color: #c2185b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.82rem;
+            color: #999;
+            border-top: 1px solid #FFE7EE;
+        }
+
+        @media (max-width: 500px) {
+            header h1 { font-size: 1.5rem; }
+            .card { padding: 20px 18px; }
+        }
     </style>
 </head>
 <body>
 
-<h1>Privacy Policy – Pregnancy Test</h1>
-<p><strong>Last updated:</strong> April 2026</p>
+<header>
+    <div class="icon">🤰</div>
+    <h1>Privacy Policy</h1>
+    <p>Pregnancy Test &nbsp;·&nbsp; com.jacek.miszczyk.pregnancytestLite</p>
+    <p style="margin-top:6px;">Last updated: April 2026</p>
+</header>
 
-<p>This Privacy Policy describes how the <strong>Pregnancy Test</strong> application
-(<em>com.jacek.miszczyk.pregnancytestLite</em>), developed by Jacek Miszczyk,
-handles information when you use the app.</p>
+<div class="container">
 
-<h2>1. Information We Collect</h2>
-<p>The app itself does <strong>not</strong> collect, store, or transmit any personal
-health information you enter (all quiz answers remain on your device and are never
-sent to any server).</p>
-<p>However, the app uses third-party services that may collect certain information
-automatically:</p>
-<ul>
-    <li><strong>Google AdMob</strong> – displays advertisements and may collect the
-    Android Advertising ID and other device identifiers to serve relevant ads.</li>
-    <li><strong>Google Firebase Analytics</strong> – collects anonymous usage
-    statistics (e.g. app opens, crashes) to help improve the app.</li>
-</ul>
+    <div class="card">
+        <h2><span class="num">1</span> Information We Collect</h2>
+        <p>The app itself does <strong>not</strong> collect, store, or transmit any personal health information you enter. All quiz answers remain on your device and are never sent to any server.</p>
+        <p>However, the app uses third-party services that may collect certain information automatically:</p>
+        <ul>
+            <li><strong>Google AdMob</strong> – displays advertisements and may collect the Android Advertising ID and other device identifiers to serve relevant ads.</li>
+            <li><strong>Google Firebase Analytics</strong> – collects anonymous usage statistics (e.g. app opens, crashes) to help improve the app.</li>
+        </ul>
+    </div>
 
-<h2>2. Android Advertising ID</h2>
-<p>Google AdMob may use the Android Advertising ID (AAID) to provide personalised
-advertisements. You can reset or opt out of personalised ads at any time in your
-device settings:</p>
-<p><em>Settings → Google → Ads → Delete advertising ID</em> (Android 12+)<br>
-   or<br>
-   <em>Settings → Google → Ads → Opt out of Ads Personalisation</em> (older versions)</p>
-<p>For more information see Google's Privacy Policy:
-<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+    <div class="card">
+        <h2><span class="num">2</span> Android Advertising ID</h2>
+        <p>Google AdMob may use the Android Advertising ID (AAID) to provide personalised advertisements. You can reset or opt out of personalised ads at any time in your device settings:</p>
+        <ul>
+            <li><strong>Android 12+</strong> &nbsp;→&nbsp; Settings → Google → Ads → Delete advertising ID</li>
+            <li><strong>Older versions</strong> &nbsp;→&nbsp; Settings → Google → Ads → Opt out of Ads Personalisation</li>
+        </ul>
+        <p style="margin-top:12px;">For more information see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+    </div>
 
-<h2>3. How Information Is Used</h2>
-<ul>
-    <li>To display relevant advertisements via Google AdMob.</li>
-    <li>To collect anonymous crash reports and usage statistics via Firebase Analytics.</li>
-</ul>
-<p>We do not sell, trade, or share your information with third parties beyond the
-services listed above.</p>
+    <div class="card">
+        <h2><span class="num">3</span> How Information Is Used</h2>
+        <ul>
+            <li>To display relevant advertisements via <strong>Google AdMob</strong>.</li>
+            <li>To collect anonymous crash reports and usage statistics via <strong>Firebase Analytics</strong>.</li>
+        </ul>
+        <p style="margin-top:12px;">We do not sell, trade, or share your information with third parties beyond the services listed above.</p>
+    </div>
 
-<h2>4. Medical Disclaimer</h2>
-<p>This application is for <strong>entertainment and informational purposes only</strong>.
-It is not a medical device and does not provide medical diagnoses. Always consult a
-qualified healthcare professional regarding any health concerns.</p>
+    <div class="card disclaimer">
+        <h2><span class="num">4</span> Medical Disclaimer</h2>
+        <p>This application is for <strong>entertainment and informational purposes only</strong>. It is not a medical device and does not provide medical diagnoses. Always consult a qualified healthcare professional regarding any health concerns.</p>
+    </div>
 
-<h2>5. Children's Privacy</h2>
-<p>This app is not directed to children under the age of 13. We do not knowingly
-collect personal information from children.</p>
+    <div class="card">
+        <h2><span class="num">5</span> Children's Privacy</h2>
+        <p>This app is not directed to children under the age of 13. We do not knowingly collect personal information from children.</p>
+    </div>
 
-<h2>6. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. Any changes will be posted
-on this page with an updated date.</p>
+    <div class="card">
+        <h2><span class="num">6</span> Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
+    </div>
 
-<h2>7. Contact</h2>
-<p>If you have any questions about this Privacy Policy, please contact us at:<br>
-<a href="mailto:pregnancy.test.app@gmail.com">pregnancy.test.app@gmail.com</a></p>
+    <div class="card">
+        <h2><span class="num">7</span> Contact</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+        <a href="mailto:pregnancy.test.app@gmail.com">pregnancy.test.app@gmail.com</a></p>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Jacek Miszczyk &nbsp;·&nbsp; Pregnancy Test
+</footer>
 
 </body>
 </html>
