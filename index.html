@@ -21,28 +21,36 @@
         .title-bar {
             background: #FFE7EE;
             border-bottom: 3px solid #EB667A;
-            padding: 20px 24px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
+            align-items: stretch;
+            min-height: 110px;
         }
 
         .title-bar img.icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            height: 100%;
+            width: auto;
+            display: block;
+            object-fit: cover;
+            border-right: 3px solid #EB667A;
+            flex-shrink: 0;
+        }
+
+        .title-bar .title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 28px;
+            gap: 8px;
         }
 
         .title-bar img.logo {
             display: block;
-            height: 36px;
+            height: 44px;
             width: auto;
         }
 
         .title-bar p {
-            font-size: 0.8rem;
+            font-size: 0.95rem;
             color: #933542;
             font-weight: 500;
         }
@@ -142,8 +150,10 @@
         }
 
         @media (max-width: 480px) {
-            .title-bar img.icon { width: 52px; height: 52px; }
-            .title-bar img.logo { height: 28px; }
+            .title-bar { min-height: 80px; }
+            .title-bar img.logo { height: 32px; }
+            .title-bar .title-text { padding: 14px 18px; gap: 6px; }
+            .title-bar p { font-size: 0.8rem; }
             .card { padding: 18px 16px; }
         }
     </style>
@@ -152,8 +162,10 @@
 
 <div class="title-bar">
     <img class="icon" src="ic_launcher.png" alt="App icon" />
-    <img class="logo" src="logo.png" alt="Pregnancy Test" />
-    <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
+    <div class="title-text">
+        <img class="logo" src="logo.png" alt="Pregnancy Test" />
+        <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
+    </div>
 </div>
 
 <div class="container">
