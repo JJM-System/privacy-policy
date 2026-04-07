@@ -23,34 +23,51 @@
             border-bottom: 3px solid #EB667A;
             display: flex;
             align-items: stretch;
-            min-height: 110px;
+            min-height: 120px;
+            overflow: hidden;
         }
 
-        .title-bar img.icon {
-            height: 100%;
+        .title-bar img.panna {
+            height: auto;
             width: auto;
+            max-height: 160px;
             display: block;
-            object-fit: cover;
-            border-right: 3px solid #EB667A;
             flex-shrink: 0;
+            align-self: flex-end;
         }
 
         .title-bar .title-text {
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             padding: 20px 28px;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .title-bar .title-text .app-identity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .title-bar img.icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 13px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            flex-shrink: 0;
         }
 
         .title-bar img.logo {
             display: block;
-            height: 44px;
+            height: 42px;
             width: auto;
         }
 
         .title-bar p {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: #933542;
             font-weight: 500;
         }
@@ -150,10 +167,12 @@
         }
 
         @media (max-width: 480px) {
-            .title-bar { min-height: 80px; }
-            .title-bar img.logo { height: 32px; }
-            .title-bar .title-text { padding: 14px 18px; gap: 6px; }
-            .title-bar p { font-size: 0.8rem; }
+            .title-bar { min-height: 90px; }
+            .title-bar img.panna { max-height: 120px; }
+            .title-bar img.logo { height: 30px; }
+            .title-bar img.icon { width: 40px; height: 40px; }
+            .title-bar .title-text { padding: 12px 16px; gap: 8px; }
+            .title-bar p { font-size: 0.78rem; }
             .card { padding: 18px 16px; }
         }
     </style>
@@ -161,9 +180,12 @@
 <body>
 
 <div class="title-bar">
-    <img class="icon" src="ic_launcher.png" alt="App icon" />
+    <img class="panna" src="ic_panna.png" alt="" />
     <div class="title-text">
-        <img class="logo" src="logo.png" alt="Pregnancy Test" />
+        <div class="app-identity">
+            <img class="icon" src="ic_launcher.png" alt="App icon" />
+            <img class="logo" src="logo.png" alt="Pregnancy Test" />
+        </div>
         <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
     </div>
 </div>
