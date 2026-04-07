@@ -17,50 +17,48 @@
             line-height: 1.7;
         }
 
-        /* ── HEADER ── */
-        header {
-            position: relative;
+        /* ── HEADER IMAGE ── */
+        .header-illustration {
             width: 100%;
+            display: block;
             line-height: 0;
         }
 
-        header .header-img {
+        .header-illustration img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .header-inner {
-            position: absolute;
-            top: 50%;
-            left: 55%;
-            transform: translate(-50%, -50%);
+        /* ── TITLE BAR ── */
+        .title-bar {
+            background: #FFE7EE;
+            border-bottom: 3px solid #EB667A;
+            padding: 16px 24px;
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 16px;
         }
 
-        .header-inner img.icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        .title-bar img.icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
             flex-shrink: 0;
         }
 
-        .header-text img.logo {
+        .title-bar .title-text img.logo {
             display: block;
-            max-width: 210px;
-            width: 18vw;
-            min-width: 120px;
-            margin-bottom: 4px;
+            height: 32px;
+            width: auto;
+            margin-bottom: 2px;
         }
 
-        .header-text p {
-            font-size: 0.78rem;
+        .title-bar .title-text p {
+            font-size: 0.8rem;
             color: #933542;
             font-weight: 500;
-            white-space: nowrap;
         }
 
         /* ── CONTENT ── */
@@ -158,25 +156,26 @@
         }
 
         @media (max-width: 480px) {
-            .header-inner { gap: 8px; }
-            .header-inner img.icon { width: 44px; height: 44px; border-radius: 11px; }
-            .header-text p { font-size: 0.68rem; }
+            .title-bar { padding: 12px 16px; gap: 12px; }
+            .title-bar img.icon { width: 44px; height: 44px; border-radius: 11px; }
+            .title-bar .title-text img.logo { height: 24px; }
             .card { padding: 18px 16px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img class="header-img" src="bgt_main.jpg" alt="" />
-    <div class="header-inner">
-        <img class="icon" src="ic_launcher.png" alt="App icon" />
-        <div class="header-text">
-            <img class="logo" src="logo.png" alt="Pregnancy Test" />
-            <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
-        </div>
+<div class="header-illustration">
+    <img src="bgt_main.jpg" alt="" />
+</div>
+
+<div class="title-bar">
+    <img class="icon" src="ic_launcher.png" alt="App icon" />
+    <div class="title-text">
+        <img class="logo" src="logo.png" alt="Pregnancy Test" />
+        <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
     </div>
-</header>
+</div>
 
 <div class="container">
 
