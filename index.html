@@ -25,7 +25,7 @@
             display: flex;
             align-items: stretch;
             justify-content: space-between;
-            min-height: 150px;
+            min-height: 160px; /* Nieco wyższy bar dla większej ikony */
             overflow: hidden;
         }
 
@@ -48,35 +48,39 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px 10px;
-            gap: 12px;
+            padding: 20px 10px;
+            gap: 15px;
         }
 
-        .title-bar .title-text .app-identity {
+        /* Kontener tożsamości aplikacji - teraz wyśrodkowany pionowo */
+        .title-bar .app-identity {
             display: flex;
-            align-items: center;
-            gap: 12px;
+            align-items: center; /* Wyśrodkowanie ikony i logo względem siebie */
+            justify-content: center;
+            gap: 20px; /* Większy odstęp między ikoną a tekstem logo */
         }
 
         .title-bar img.icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            width: 80px;  /* Zwiększona ikona */
+            height: 80px; /* Zwiększona ikona */
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             flex-shrink: 0;
+            /* Usunięcie sztywnego trzymania się linii tekstu, jeśli bar jest wysoki */
         }
 
         .title-bar img.logo {
             display: block;
-            height: 60px;
+            height: 65px; /* Odrobinę większe logo tekstowe */
             width: auto;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
         .title-bar p {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: #933542;
             font-weight: 500;
+            margin-top: 5px;
         }
 
         /* ── CONTENT ── */
@@ -130,8 +134,6 @@
             margin-bottom: 10px;
         }
 
-        .card p:last-child { margin-bottom: 0; }
-
         .card ul {
             padding-left: 0;
             list-style: none;
@@ -178,11 +180,11 @@
         }
 
         @media (max-width: 480px) {
-            .title-bar { min-height: 90px; }
+            .title-bar { min-height: 120px; }
             .title-bar img.panna { max-height: 120px; }
-            .title-bar img.logo { height: 30px; }
-            .title-bar img.icon { width: 40px; height: 40px; }
-            .title-bar .title-text { padding: 12px 16px; gap: 8px; }
+            .title-bar img.logo { height: 40px; }
+            .title-bar img.icon { width: 55px; height: 55px; border-radius: 12px; }
+            .title-bar .title-text { padding: 12px 10px; gap: 8px; }
             .title-bar p { font-size: 0.78rem; }
             .card { padding: 18px 16px; }
         }
@@ -203,7 +205,6 @@
 </div>
 
 <div class="container">
-
     <div class="card">
         <h2><span class="num">1</span> Information We Collect</h2>
         <p>The app itself does <strong>not</strong> collect, store, or transmit any personal health information you enter. All quiz answers remain on your device and are never sent to any server.</p>
@@ -253,7 +254,6 @@
         <p>If you have any questions about this Privacy Policy, please contact us at:<br>
         <a href="mailto:pregnancy.test.app@gmail.com">pregnancy.test.app@gmail.com</a></p>
     </div>
-
 </div>
 
 <footer>
