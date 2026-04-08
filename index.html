@@ -24,58 +24,49 @@
             border-bottom: 3px solid #EB667A;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Centruje główny kontener tekstowy */
             min-height: 180px;
             overflow: hidden;
             position: relative;
-            padding: 0 20px;
         }
 
+        /* Panny przyklejone do krawędzi okna */
         .title-bar img.panna {
             position: absolute;
             bottom: 0;
             height: auto;
             max-height: 180px;
             width: auto;
-            flex-shrink: 0;
+            z-index: 1;
         }
-
         .panna-left { left: 0; }
         .panna-right { right: 0; transform: scaleX(-1); }
 
-        .header-content {
+        /* KONTENER ŚRODKOWY */
+        .header-center-wrapper {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 25px;
+            position: relative; /* Pozwala ikonie odnieść się do środka */
             z-index: 2;
         }
 
-        .header-text-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            z-index: 2;
-        }
-
+        /* IKONA - Stałe przesunięcie w lewo względem środka tekstów */
         .title-bar img.icon {
             position: absolute;
-            left: 15%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100px;
-            height: 100px;
+            right: 100%; /* Ustawia ikonę całkowicie na lewo od kontenera tekstów */
+            margin-right: 30px; /* STAŁA ODLEGŁOŚĆ OD TEKSTU */
+            width: 90px;
+            height: 90px;
             border-radius: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            z-index: 3;
+            flex-shrink: 0;
         }
 
-        .text-group {
+        .text-group-center {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center; /* Teksty wycentrowane względem siebie */
+            text-align: center;
         }
 
         .title-bar img.logo {
@@ -86,9 +77,10 @@
         }
 
         .title-bar p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #933542;
             font-weight: 500;
+            white-space: nowrap; /* Zapobiega łamaniu daty */
         }
 
         /* ── CONTENT ── */
@@ -109,7 +101,7 @@
 
         .card.disclaimer {
             background: rgba(255, 240, 243, 0.96);
-            border-left: 6px solid #EB667A;
+            border-left: 6px solid #F18592;
         }
 
         .card h2 {
@@ -122,7 +114,7 @@
             gap: 10px;
         }
 
-        .card.disclaimer h2 { color: #c2185b; }
+        .card.disclaimer h2 { color: #EB667A; }
 
         .card h2 .num {
             background: #FFE7EE;
@@ -137,29 +129,6 @@
             flex-shrink: 0;
         }
 
-        .card p { font-size: 0.95rem; color: #444; margin-bottom: 12px; }
-        .card ul { list-style: none; margin-bottom: 12px; }
-        .card ul li {
-            font-size: 0.95rem;
-            color: #444;
-            padding: 8px 0 8px 25px;
-            position: relative;
-            border-bottom: 1px solid #FFE7EE;
-        }
-        .card ul li:last-child { border-bottom: none; }
-        .card ul li::before {
-            content: "♥";
-            color: #EB667A;
-            position: absolute;
-            left: 0;
-            top: 10px;
-            font-size: 0.8rem;
-        }
-        .card strong { color: #c2185b; }
-
-        a { color: #c2185b; text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; }
-
         footer {
             text-align: center;
             padding: 30px;
@@ -169,11 +138,17 @@
         }
 
         @media (max-width: 600px) {
-            .header-content { gap: 15px; }
-            .title-bar img.icon { width: 60px; height: 60px; }
-            .title-bar img.logo { height: 40px; }
-            .title-bar { min-height: 140px; }
-            .title-bar img.panna { max-height: 140px; opacity: 0.3; }
+            .header-center-wrapper { flex-direction: column; }
+            .title-bar img.icon { 
+                position: static; 
+                margin-right: 0; 
+                margin-bottom: 10px; 
+                width: 65px; 
+                height: 65px; 
+            }
+            .title-bar img.logo { height: 45px; }
+            .title-bar { min-height: 150px; }
+            .title-bar img.panna { max-height: 120px; opacity: 0.3; }
         }
     </style>
 </head>
@@ -181,10 +156,11 @@
 
 <div class="title-bar">
     <img class="panna panna-left" src="ic_panna.png" alt="" />
-    <img class="icon" src="ic_launcher.png" alt="App icon" />
     
-    <div class="header-text-center">
-        <div class="text-group">
+    <div class="header-center-wrapper">
+        <img class="icon" src="ic_launcher.png" alt="App icon" />
+        
+        <div class="text-group-center">
             <img class="logo" src="logo.png" alt="Pregnancy Test" />
             <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
         </div>
@@ -194,57 +170,10 @@
 </div>
 
 <div class="container">
-
     <div class="card">
         <h2><span class="num">1</span> Information We Collect</h2>
         <p>The app itself does <strong>not</strong> collect, store, or transmit any personal health information you enter. All quiz answers remain on your device and are never sent to any server.</p>
-        <p>However, the app uses third-party services that may collect certain information automatically:</p>
-        <ul>
-            <li><strong>Google AdMob</strong> – displays advertisements and may collect the Android Advertising ID and other device identifiers to serve relevant ads.</li>
-            <li><strong>Google Firebase Analytics</strong> – collects anonymous usage statistics (e.g. app opens, crashes) to help improve the app.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2><span class="num">2</span> Android Advertising ID</h2>
-        <p>Google AdMob may use the Android Advertising ID (AAID) to provide personalised advertisements. You can reset or opt out of personalised ads at any time in your device settings:</p>
-        <ul>
-            <li><strong>Android 12+</strong> &nbsp;→&nbsp; Settings → Google → Ads → Delete advertising ID</li>
-            <li><strong>Older versions</strong> &nbsp;→&nbsp; Settings → Google → Ads → Opt out of Ads Personalisation</li>
-        </ul>
-        <p style="margin-top:12px;">For more information see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
-    </div>
-
-    <div class="card">
-        <h2><span class="num">3</span> How Information Is Used</h2>
-        <ul>
-            <li>To display relevant advertisements via <strong>Google AdMob</strong>.</li>
-            <li>To collect anonymous crash reports and usage statistics via <strong>Firebase Analytics</strong>.</li>
-        </ul>
-        <p style="margin-top:12px;">We do not sell, trade, or share your information with third parties beyond the services listed above.</p>
-    </div>
-
-    <div class="card disclaimer">
-        <h2><span class="num">4</span> Medical Disclaimer</h2>
-        <p>This application is for <strong>entertainment and informational purposes only</strong>. It is not a medical device and does not provide medical diagnoses. Always consult a qualified healthcare professional regarding any health concerns.</p>
-    </div>
-
-    <div class="card">
-        <h2><span class="num">5</span> Children's Privacy</h2>
-        <p>This app is not directed to children under the age of 13. We do not knowingly collect personal information from children.</p>
-    </div>
-
-    <div class="card">
-        <h2><span class="num">6</span> Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
-    </div>
-
-    <div class="card">
-        <h2><span class="num">7</span> Contact</h2>
-        <p>If you have any questions about this Privacy Policy, please contact us at:<br>
-        <a href="mailto:pregnancy.test.app@gmail.com">pregnancy.test.app@gmail.com</a></p>
-    </div>
-
+        </div>
 </div>
 
 <footer>
