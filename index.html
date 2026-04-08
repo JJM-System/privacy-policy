@@ -23,31 +23,32 @@
             background: #FFE7EE;
             border-bottom: 3px solid #EB667A;
             display: flex;
-            align-items: center; /* Wyśrodkowanie wszystkiego w pionie */
-            justify-content: space-between;
-            min-height: 180px; /* Zwiększony bar */
+            align-items: center;
+            justify-content: center; /* Centruje zawartość środkową */
+            min-height: 180px;
             overflow: hidden;
+            position: relative; /* Potrzebne do przyklejenia panien */
             padding: 0 20px;
         }
 
         .title-bar img.panna {
+            position: absolute; /* Przykleja do krawędzi paska */
+            bottom: 0;
             height: auto;
-            width: auto;
             max-height: 180px;
-            display: block;
+            width: auto;
             flex-shrink: 0;
-            align-self: flex-end; /* Panny zostają na dole paska */
         }
 
-        .panna-right { transform: scaleX(-1); }
+        .panna-left { left: 0; }
+        .panna-right { right: 0; transform: scaleX(-1); }
 
-        /* Główny kontener środkowy */
         .header-content {
-            flex: 1;
             display: flex;
-            align-items: center; /* Centrowanie ikony i tekstów względem siebie */
+            align-items: center;
             justify-content: center;
             gap: 25px;
+            z-index: 2; /* Żeby tekst był nad pannami jeśli się spotkają */
         }
 
         .title-bar img.icon {
@@ -62,12 +63,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start; /* Teksty wyrównane do lewej względem ikony */
         }
 
         .title-bar img.logo {
             display: block;
-            height: 65px;
+            height: 70px; /* Nieco większy napis */
             width: auto;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
@@ -94,13 +94,9 @@
             border-left: 6px solid #EB667A;
         }
 
-        /* Ujednolicony Medical Disclaimer */
         .card.disclaimer {
-            background: rgba(255, 240, 243, 0.96); /* Delikatnie inny odcień różu */
+            background: rgba(255, 240, 243, 0.96);
             border-left: 6px solid #F18592;
-            border-right: 1px solid rgba(241, 133, 146, 0.2);
-            border-top: 1px solid rgba(241, 133, 146, 0.2);
-            border-bottom: 1px solid rgba(241, 133, 146, 0.2);
         }
 
         .card h2 {
@@ -113,7 +109,7 @@
             gap: 10px;
         }
 
-        .card.disclaimer h2 { color: #d84315; } /* Inny kolor nagłówka dla ostrzeżenia */
+        .card.disclaimer h2 { color: #d84315; }
 
         .card h2 .num {
             background: #FFE7EE;
@@ -125,16 +121,18 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
-        .card p { font-size: 0.95rem; color: #444; margin-bottom: 10px; }
-        .card ul { list-style: none; }
+        .card p { font-size: 0.95rem; color: #444; margin-bottom: 12px; }
+        .card ul { list-style: none; margin-bottom: 12px; }
         .card ul li {
             font-size: 0.95rem;
             padding: 8px 0 8px 25px;
             position: relative;
             border-bottom: 1px solid #FFE7EE;
         }
+        .card ul li:last-child { border-bottom: none; }
         .card ul li::before {
             content: "♥";
             color: #EB667A;
@@ -142,27 +140,32 @@
             left: 0;
             top: 10px;
         }
+        .card strong { color: #c2185b; }
+
+        a { color: #c2185b; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 30px;
             font-size: 0.85rem;
             color: #b06070;
+            background: rgba(255,255,255,0.4);
         }
 
         @media (max-width: 600px) {
             .header-content { gap: 15px; }
-            .title-bar img.icon { width: 65px; height: 65px; }
-            .title-bar img.logo { height: 45px; }
-            .title-bar { min-height: 130px; }
-            .title-bar img.panna { max-height: 130px; }
+            .title-bar img.icon { width: 60px; height: 60px; }
+            .title-bar img.logo { height: 40px; }
+            .title-bar { min-height: 140px; }
+            .title-bar img.panna { max-height: 140px; opacity: 0.4; } /* Lekka przezroczystość panien na mobile żeby nie zasłaniały tekstu */
         }
     </style>
 </head>
 <body>
 
 <div class="title-bar">
-    <img class="panna" src="ic_panna.png" alt="" />
+    <img class="panna panna-left" src="ic_panna.png" alt="" />
     
     <div class="header-content">
         <img class="icon" src="ic_launcher.png" alt="App icon" />
@@ -176,13 +179,30 @@
 </div>
 
 <div class="container">
+
     <div class="card">
         <h2><span class="num">1</span> Information We Collect</h2>
-        <p>The app itself does <strong>not</strong> collect, store, or transmit any personal health information you enter. All quiz answers remain on your device.</p>
+        <p>The app itself does <strong>not</strong> collect, store, or transmit any personal health information you enter. All quiz answers remain on your device and are never sent to any server.</p>
+        <p>However, the app uses third-party services that may collect certain information automatically:</p>
         <ul>
-            <li><strong>Google AdMob</strong> – displays advertisements.</li>
-            <li><strong>Firebase Analytics</strong> – anonymous usage statistics.</li>
+            <li><strong>Google AdMob</strong> – displays advertisements and may collect device identifiers.</li>
+            <li><strong>Google Firebase Analytics</strong> – collects anonymous usage statistics to help improve the app.</li>
         </ul>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">2</span> Android Advertising ID</h2>
+        <p>Google AdMob may use the Android Advertising ID (AAID) to provide personalised advertisements. You can reset this in your device settings.</p>
+        <p>For more information see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">3</span> How Information Is Used</h2>
+        <ul>
+            <li>To display relevant advertisements via <strong>Google AdMob</strong>.</li>
+            <li>To collect anonymous crash reports via <strong>Firebase Analytics</strong>.</li>
+        </ul>
+        <p>We do not sell, trade, or share your information with third parties.</p>
     </div>
 
     <div class="card disclaimer">
@@ -190,7 +210,23 @@
         <p>This application is for <strong>entertainment and informational purposes only</strong>. It is not a medical device and does not provide medical diagnoses. Always consult a qualified healthcare professional regarding any health concerns.</p>
     </div>
 
+    <div class="card">
+        <h2><span class="num">5</span> Children's Privacy</h2>
+        <p>This app is not directed to children under the age of 13. We do not knowingly collect personal information from children.</p>
     </div>
+
+    <div class="card">
+        <h2><span class="num">6</span> Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="num">7</span> Contact</h2>
+        <p>If you have any questions, please contact us at:<br>
+        <a href="mailto:pregnancy.test.app@gmail.com">pregnancy.test.app@gmail.com</a></p>
+    </div>
+
+</div>
 
 <footer>
     &copy; 2026 JJM System &nbsp;·&nbsp; Pregnancy Test
