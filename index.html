@@ -24,15 +24,15 @@
             border-bottom: 3px solid #EB667A;
             display: flex;
             align-items: center;
-            justify-content: center; /* Centruje zawartość środkową */
+            justify-content: center;
             min-height: 180px;
             overflow: hidden;
-            position: relative; /* Potrzebne do przyklejenia panien */
+            position: relative;
             padding: 0 20px;
         }
 
         .title-bar img.panna {
-            position: absolute; /* Przykleja do krawędzi paska */
+            position: absolute;
             bottom: 0;
             height: auto;
             max-height: 180px;
@@ -48,7 +48,7 @@
             align-items: center;
             justify-content: center;
             gap: 25px;
-            z-index: 2; /* Żeby tekst był nad pannami jeśli się spotkają */
+            z-index: 2;
         }
 
         .title-bar img.icon {
@@ -67,7 +67,7 @@
 
         .title-bar img.logo {
             display: block;
-            height: 70px; /* Nieco większy napis */
+            height: 70px;
             width: auto;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
@@ -96,7 +96,7 @@
 
         .card.disclaimer {
             background: rgba(255, 240, 243, 0.96);
-            border-left: 6px solid #F18592;
+            border-left: 6px solid #EB667A;
         }
 
         .card h2 {
@@ -109,7 +109,7 @@
             gap: 10px;
         }
 
-        .card.disclaimer h2 { color: #d84315; }
+        .card.disclaimer h2 { color: #c2185b; }
 
         .card h2 .num {
             background: #FFE7EE;
@@ -128,6 +128,7 @@
         .card ul { list-style: none; margin-bottom: 12px; }
         .card ul li {
             font-size: 0.95rem;
+            color: #444;
             padding: 8px 0 8px 25px;
             position: relative;
             border-bottom: 1px solid #FFE7EE;
@@ -139,6 +140,7 @@
             position: absolute;
             left: 0;
             top: 10px;
+            font-size: 0.8rem;
         }
         .card strong { color: #c2185b; }
 
@@ -158,7 +160,7 @@
             .title-bar img.icon { width: 60px; height: 60px; }
             .title-bar img.logo { height: 40px; }
             .title-bar { min-height: 140px; }
-            .title-bar img.panna { max-height: 140px; opacity: 0.4; } /* Lekka przezroczystość panien na mobile żeby nie zasłaniały tekstu */
+            .title-bar img.panna { max-height: 140px; opacity: 0.3; }
         }
     </style>
 </head>
@@ -171,7 +173,7 @@
         <img class="icon" src="ic_launcher.png" alt="App icon" />
         <div class="text-group">
             <img class="logo" src="logo.png" alt="Pregnancy Test" />
-            <p>Privacy Policy &nbsp;·&nbsp; April 2026</p>
+            <p>Privacy Policy &nbsp;·&nbsp; Last updated: April 2026</p>
         </div>
     </div>
 
@@ -185,24 +187,28 @@
         <p>The app itself does <strong>not</strong> collect, store, or transmit any personal health information you enter. All quiz answers remain on your device and are never sent to any server.</p>
         <p>However, the app uses third-party services that may collect certain information automatically:</p>
         <ul>
-            <li><strong>Google AdMob</strong> – displays advertisements and may collect device identifiers.</li>
-            <li><strong>Google Firebase Analytics</strong> – collects anonymous usage statistics to help improve the app.</li>
+            <li><strong>Google AdMob</strong> – displays advertisements and may collect the Android Advertising ID and other device identifiers to serve relevant ads.</li>
+            <li><strong>Google Firebase Analytics</strong> – collects anonymous usage statistics (e.g. app opens, crashes) to help improve the app.</li>
         </ul>
     </div>
 
     <div class="card">
         <h2><span class="num">2</span> Android Advertising ID</h2>
-        <p>Google AdMob may use the Android Advertising ID (AAID) to provide personalised advertisements. You can reset this in your device settings.</p>
-        <p>For more information see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+        <p>Google AdMob may use the Android Advertising ID (AAID) to provide personalised advertisements. You can reset or opt out of personalised ads at any time in your device settings:</p>
+        <ul>
+            <li><strong>Android 12+</strong> &nbsp;→&nbsp; Settings → Google → Ads → Delete advertising ID</li>
+            <li><strong>Older versions</strong> &nbsp;→&nbsp; Settings → Google → Ads → Opt out of Ads Personalisation</li>
+        </ul>
+        <p style="margin-top:12px;">For more information see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
     </div>
 
     <div class="card">
         <h2><span class="num">3</span> How Information Is Used</h2>
         <ul>
             <li>To display relevant advertisements via <strong>Google AdMob</strong>.</li>
-            <li>To collect anonymous crash reports via <strong>Firebase Analytics</strong>.</li>
+            <li>To collect anonymous crash reports and usage statistics via <strong>Firebase Analytics</strong>.</li>
         </ul>
-        <p>We do not sell, trade, or share your information with third parties.</p>
+        <p style="margin-top:12px;">We do not sell, trade, or share your information with third parties beyond the services listed above.</p>
     </div>
 
     <div class="card disclaimer">
@@ -217,12 +223,12 @@
 
     <div class="card">
         <h2><span class="num">6</span> Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page.</p>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
     </div>
 
     <div class="card">
         <h2><span class="num">7</span> Contact</h2>
-        <p>If you have any questions, please contact us at:<br>
+        <p>If you have any questions about this Privacy Policy, please contact us at:<br>
         <a href="mailto:pregnancy.test.app@gmail.com">pregnancy.test.app@gmail.com</a></p>
     </div>
 
