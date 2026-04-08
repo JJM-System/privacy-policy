@@ -25,7 +25,7 @@
             display: flex;
             align-items: stretch;
             justify-content: space-between;
-            min-height: 120px;
+            min-height: 150px;
             overflow: hidden;
         }
 
@@ -48,8 +48,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px 28px;
-            gap: 10px;
+            padding: 30px 10px;
+            gap: 12px;
         }
 
         .title-bar .title-text .app-identity {
@@ -59,17 +59,18 @@
         }
 
         .title-bar img.icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 13px;
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.12);
             flex-shrink: 0;
         }
 
         .title-bar img.logo {
             display: block;
-            height: 42px;
+            height: 60px;
             width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
         }
 
         .title-bar p {
@@ -86,13 +87,17 @@
         }
 
         .card {
-            background: rgba(255,255,255,0.93);
-            border-radius: 14px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
             padding: 24px 28px;
-            margin-bottom: 16px;
-            box-shadow: 0 2px 14px rgba(194,24,91,0.09);
-            border-left: 4px solid #EB667A;
-            backdrop-filter: blur(4px);
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(194,24,91,0.09);
+            border-left: 6px solid #EB667A;
+            transition: transform 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
         }
 
         .card h2 {
